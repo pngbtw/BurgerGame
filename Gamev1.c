@@ -1,3 +1,7 @@
+/* GameV1.c */
+/* Made By pngbtw */
+/* Todo: Make when player touches the object the game ends */
+
 #include <ncurses.h>
 
 int main()
