@@ -3,11 +3,17 @@
 /* Todo: Make when player touches the object the game ends */
 
 #include <ncurses.h>
+#include <time.h>
+#include <stdlib.h>
 
 int main()
 {
     int key = 0, y = 15, x = 15;
     int max_y, max_x;
+    srand(time(0));
+    int randomnumy = (rand() % (54-9+1)) + 9;
+    int randomnumx = (rand() % (229-9+1)) + 9;
+
 
     initscr();
     keypad(stdscr, TRUE);
@@ -15,7 +21,7 @@ int main()
     curs_set(0);
     getmaxyx(stdscr, max_y, max_x);
 
-    move(25, 25);
+    move(randomnumy, randomnumx);
     printw("BURGER");
     refresh();
 
@@ -28,7 +34,7 @@ int main()
 
         move(y, x);
         printw("       ");
-        
+
 
         if (key == KEY_LEFT) {
             if (x > 0) {
@@ -52,7 +58,6 @@ int main()
         printw("Gambash");
         refresh();
 
-        s
     }
 
     endwin();
